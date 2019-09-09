@@ -1,0 +1,63 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <h1 class="text-center">Order Info!</h1>
+      <!-- category #name: {{ order?.creatorName }} -->
+    </h3>
+  </div>
+  <div class="panel-body">
+
+    <div class="col-md-7">
+      <a class="list-group-item"><h5>Creator</h5>:     <p>{{ order?.creatorName }}     </p></a>
+      <a class="list-group-item"><h5>total Price</h5>: <p>{{ order?.totalPrice | currency:'USD':true }}      </p></a>
+      <a class="list-group-item"><h5>Added Date</h5>:  <p>{{ order?.addedDate | date }}</p></a>
+    </div>
+    <div class="col-md-5">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnNMyzD6j0LEKXxS5wo3OtC-P6gMK0KVbnPoBEvD4MutaKT4n3Dw" style="max-width: 150px">
+    </div>
+  </div>
+</div>
+
+
+<div class="panel-heading">
+  <table matSort class="table">
+    <tr>
+      <th> id</th>
+      <th> name</th>
+      <th> iamage</th>
+      <th> description </th>
+      <th> price </th>
+      <th> Discount </th>
+      <th> Finel price </th>
+      <th> category </th>
+      <th> items </th>
+      <th> display </th>
+      <th> controls </th>
+    </tr>
+
+  <tr *ngFor="let product of order.products; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ product.name }}</td>
+    <td>
+      <img src="{{ product.image }}" style="width: 45px" class="img-responsive" />
+    </td>
+    <td> <p> {{ product.description }} </p> </td>
+    <td>{{ product.price | currency:'USD':true }}</td>
+    <td>{{ product.discount | currency:'USD':true  }}</td>
+    <td>{{ product.priceDisc | currency:'USD':true }}</td>
+    <td>{{ product.category }}</td>
+    <td>{{ product.clientItems }}</td>
+    <td> <span [style.color]="product.showProduct === true ? 'red' : 'green'">
+          <p>{{ product.showProduct ? 'Yes' : 'No'}}
+      </span>
+    </td>
+    <td>
+      <div class="example-button-row">
+        <button
+          mat-raised-button
+          color="accent"
+          [routerLink]="['/dashbord/pages/products/product/', product.id, 'info']">details</button>
+      </div>
+    </td>
+  </tr>
+</table>

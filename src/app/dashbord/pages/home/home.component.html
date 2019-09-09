@@ -1,0 +1,322 @@
+<section class="statistics">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="categories">
+        <div class="info">
+          <div class="number"> {{ categories?.length }} </div>
+          <div class="text">categorys</div>
+        </div>
+        <div class="icon"> <i class="fa fa-cubes"></i> </div>
+      </div>
+      <button mat-button color="primary" routerLink="/dashbord/pages/categories/categorieslist"> Read More>>>>>></button>
+    </div>
+    <div class="col-md-3">
+      <div class="products">
+        <div class="info">
+          <div class="number">{{ products.length }}</div>
+          <div class="text">products</div>
+        </div>
+        <div class="icon"> <i class="fa fa-barcode"></i> </div>
+      </div>
+      <button mat-button color="primary" routerLink="/dashbord/pages/products/productslist"> Read More>>>>>></button>
+    </div>
+    <div class="col-md-3">
+      <div class="orders">
+        <div class="info">
+          <div class="number"> {{ orders?.length }} </div>
+          <div class="text">New Orders</div>
+        </div>
+        <div class="icon"> <i class="fa fa-shopping-bag"></i> </div>
+      </div>
+      <button mat-button color="primary"  routerLink="/dashbord/pages/orders/orderslist"> Read More>>>>>></button>
+    </div>
+    <div class="col-md-3">
+      <div class="users">
+        <div class="info">
+          <div class="number">{{ users.length }}</div>
+          <div class="text">New Users</div>
+        </div>
+        <div class="icon"> <i class="fa fa-users"></i> </div>
+      </div>
+      <button mat-button color="primary"  routerLink="/dashbord/pages/users/userslist"> Read More>>>>>></button>
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <div class="row">
+    <div class="col-md-2">
+      <circle-progress
+      [percent]="85"
+      [radius]="75"
+      [outerStrokeWidth]="7"
+      [innerStrokeWidth]="8"
+      [outerStrokeColor]="'#b19f2b'"
+      [innerStrokeColor]="'#C7E296'"
+      [animation]="true"
+      [animationDuration]="300"
+    ></circle-progress></div>
+
+    <div class="col-md-2">
+      <circle-progress
+      [percent]="46"
+      [radius]="75"
+      [outerStrokeWidth]="7"
+      [innerStrokeWidth]="8"
+      [outerStrokeColor]="'#78C000'"
+      [innerStrokeColor]="'#C7E596'"
+      [animation]="true"
+      [animationDuration]="300"
+    ></circle-progress></div>
+
+  <div class="col-md-2">
+    <circle-progress
+    [percent]="99"
+    [radius]="75"
+    [outerStrokeWidth]="7"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#669a2a'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="300"
+  ></circle-progress></div>
+
+    <div class="col-md-2">
+      <circle-progress
+      [percent]="42"
+      [radius]="75"
+      [outerStrokeWidth]="7"
+      [innerStrokeWidth]="8"
+      [outerStrokeColor]="'#2a9a5b'"
+      [innerStrokeColor]="'#C7E596'"
+      [animation]="true"
+      [animationDuration]="300"
+    ></circle-progress></div>
+
+    <div class="col-md-2">
+      <circle-progress
+      [percent]="38"
+      [radius]="75"
+      [outerStrokeWidth]="7"
+      [innerStrokeWidth]="5"
+      [outerStrokeColor]="'#2a9a9a'"
+      [innerStrokeColor]="'#C7E596'"
+      [animation]="true"
+      [animationDuration]="300"
+    ></circle-progress></div>
+
+    <div class="col-md-2">
+      <circle-progress
+      [percent]="55"
+      [radius]="75"
+      [outerStrokeWidth]="7"
+      [innerStrokeWidth]="5"
+      [outerStrokeColor]="'#64d581'"
+      [innerStrokeColor]="'#C7E596'"
+      [animation]="true"
+      [animationDuration]="300"
+    ></circle-progress></div>
+  </div>
+
+  <br><br><br>
+
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <div class="prog">
+         <div class="col-md-2">
+            <div id="user"><canvas width="100" height="100"></canvas><span><i class="fa fa-user"></i></span></div>
+            <p><span counto [step]="300" [countTo]="6645" [countFrom]="0" [duration]="1.5" (countoChange)="Users = $event" (countoEnd)="onCountoEnd()"> {{ Users }}</span>Nwe Users</p>
+         </div>
+         <div class="col-md-2">
+          <div id="tags"><canvas width="100" height="100"></canvas><span><i class="fa fa-tags"></i></span></div>
+          <p><span counto [step]="300" [countTo]="4653" [countFrom]="0" [duration]="1.5" (countoChange)="Sales = $event" (countoEnd)="onCountoEnd()">{{ Sales }}</span>Sales</p>
+        </div>
+         <div class="col-md-2">
+          <div id="cart"><canvas width="100" height="100"></canvas><span><i class="fa fa-cart-plus"></i></span></div>
+          <p><span counto [step]="300" [countTo]="6464" [countFrom]="0" [duration]="1.5" (countoChange)="Orders = $event" (countoEnd)="onCountoEnd()">{{ Orders }}</span>Orders</p>
+        </div>
+         <div class="col-md-2">
+          <div id="chart"><canvas width="100" height="100"></canvas><span><i class="fa fa-bar-chart-o"></i></span></div>
+          <p><span counto [step]="300" [countTo]="66643" [countFrom]="0" [duration]="1.5" (countoChange)="Updates = $event" (countoEnd)="onCountoEnd()">{{ Updates }}</span>Updates</p>
+        </div>
+         <div class="col-md-2">
+          <div id="eye"><canvas width="100" height="100"></canvas><span><i class="fa fa-eye"></i></span></div>
+          <p><span counto [step]="300" [countTo]="64989" [countFrom]="0" [duration]="1.5" (countoChange)="Visitors = $event" (countoEnd)="onCountoEnd()">{{Visitors}}</span>Visitors</p>
+        </div>
+         <div class="col-md-2">
+          <div id="comments"><canvas width="100" height="100"></canvas><span><i class="fa fa-comments-o"></i></span></div>
+          <p><span counto [step]="300" [countTo]="6784" [countFrom]="0" [duration]="1.5" (countoChange)="Comments = $event" (countoEnd)="onCountoEnd()">{{ Comments }}</span>Comments</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="boxs">
+
+         <div class="col-md-2">
+            <div id="users" class="box">
+              <i class="fa fa-users"></i>
+              <p>Users</p>
+              <span>43</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="barcode" class="box">
+              <i class="fa fa-barcode"></i>
+              <p>Products</p>
+              <span>234</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="chart" class="box">
+              <i class="fa fa-area-chart"></i>
+              <p>Reportes</p>
+              <span>343</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="calendar" class="box">
+              <i class="fa fa-calendar"></i>
+              <p>Calender</p>
+              <span>243</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="archive" class="box">
+              <i class="fa fa-archive"></i>
+              <p>Categores</p>
+              <span>65</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="tasks" class="box">
+              <i class="fa fa-tasks"></i>
+              <p>Tasck</p>
+              <span>234</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="envelope" class="box">
+              <i class="fa fa-envelope"></i>
+              <p>inbox</p>
+              <span>987</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="bullhorn" class="box">
+              <i class="fa fa-bullhorn"></i>
+              <p>Bullhorn</p>
+              <span>90</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="plane" class="box">
+              <i class="fa fa-plane"></i>
+              <p>Planet</p>
+              <span>675</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="money" class="box">
+              <i class="fa fa-money"></i>
+              <p>money</p>
+              <span>887</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="thumbs" class="box">
+              <i class="fa fa-thumbs-up"></i>
+              <p>facebook</p>
+              <span>2324</span>
+            </div>
+         </div>
+         <div class="col-md-2">
+            <div id="support" class="box">
+              <i class="fa fa-support"></i>
+              <p>support</p>
+              <span>566</span>
+            </div>
+         </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ chart \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+<section >
+<h6 class="text-center">\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ chart \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</h6>
+
+  <div class="row">
+    <div class="col-md-6">
+      <canvas id="lineChart" ></canvas>
+    </div>
+    <div class="col-md-6">
+      <canvas id="barChart"></canvas>
+    </div>
+    <div class="col-md-12">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Views \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+<section class="views">
+  <div class="row">
+    <br><br>
+    <h6 class="text-center">\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Views \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</h6>
+    <br><br>
+
+    <div class="col-md-3">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a
+            routerLink="/dashbord/pages/home">
+            Get All Product
+          </a>
+        </li>
+        <li class="list-group-item" *ngFor="let cate of categories; let i = index">
+          <a
+            routerLink="/dashbord/pages/home"
+            [queryParams]="{ caregory: cate.name }"
+            [class.active]="caregory === cate.name">
+            <span class="badge">14</span>
+            {{ i + 1 }}) {{ cate.name }}
+
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9 ">
+      <div class="row">
+        <div class="col-sm-6 col-md-4" *ngFor="let product of filterdProducts; let i = index" >
+          <div class="thumbnail">
+            <img src="{{ product.image }}" alt="{{ product.name }}" class="img-responsive" style="max-width: 25%">
+            <div class="caption">
+              <h3>{{ product.name }}</h3>
+              <p> {{ product.description | slice:0:14 }} </p>
+              <span> {{ product.price | currency:'USD':true }} </span>
+              <p (click)="onAddToCart(product)"> <a class="btn btn-primary btn-block" role="button">Add To cart</a> </p>
+              <p *ngIf="">
+                <a class="btn btn-primary pull-right" role="button" (click)="onDecItem(product.id)"> - </a>
+                  1
+                <a class="btn btn-primary pull-left" role="button"  (click)="onIncItem(product.id)"> + </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<div class="user">
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        category : {{ product.name | uppercase  }}
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="pull-left col-md-6">
+          <a class="list-group-item"><h4>Id</h4>:          <p>{{ product.id }}</p></a>
+          <a class="list-group-item"><h4>Name</h4>:        <p>{{ product.name }}</p></a>
+          <a class="list-group-item"><h4>price</h4>:       <p>{{ product.price | currency:'USD':true }}</p></a>
+          <a class="list-group-item"><h4>Discount</h4>:    <p>{{ product.discount | currency:'USD':true }}</p></a>
+          <a class="list-group-item"><h4>Finel price</h4>: <p>{{ product.priceDisc | currency:'USD':true }}</p></a>
+          <a class="list-group-item"><h4>category</h4>:    <p>{{ product.category }}</p></a>
+          <a class="list-group-item"><h4>display</h4>:
+            <span [style.color]="product.showProduct === true ? 'red' : 'green'">
+              <p>{{ product.showProduct ? 'Yes' : 'No'}}</p>
+              <!-- <p>
+                <mat-slide-toggle
+                  [(ngModel)]="product.showProduct"
+                  [ngModelOptions]="{standalone: true}"
+                  (change)="changeProState(product.id, $event)"
+                  [style.color]="product.showProduct === true ? 'green' : 'red'">
+                  <p> {{ product.showProduct ? 'Yes' : 'No' }}</p>
+                </mat-slide-toggle>
+              </!-->
+            </span>
+          </a>
+          <a class="list-group-item"><h4>Creator</h4>:     <p>{{ product.creatorName }}</p></a>
+          <a class="list-group-item"><h4>Added Date</h4>:  <p>{{ product.addedDate | date }}</p></a>
+          <a class="list-group-item"><h4>Description</h4>: <p>{{ product.description }}</p></a>
+
+        </div>
+        <div class="pull-right  col-md-6">
+          <div class="img-center">
+            <img src="{{ product.image }}" alt="{{ product.name }}" />
+          </div>
+        </div>
+      </div>
+        <mat-action-row>
+          <div class="col-md-6">
+              <button
+                mat-button
+                color="primary"
+                [routerLink]="['/dashbord/pages/products/editProduct', product.id, 'edit' ]">Edit</button>
+              <button mat-button color="warn" (click)="onDelete(product.id , product.name)">Delete</button>
+          </div>
+
+        </mat-action-row>
+
+    </div>
+  </div>
+

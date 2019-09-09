@@ -1,0 +1,25 @@
+.app-side-menu{
+  background-color: #415a69;
+  width: 20%;
+  max-width: 20%;
+  float: left;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  overflow: auto;
+
+}
+.app-pages{
+  background-color: #e6e6e6;
+  width: 80%;
+  max-width: 80%;
+  float: right;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  /* overflow: auto; */
+  /* margin-bottom: 350px; */
+}
+
+

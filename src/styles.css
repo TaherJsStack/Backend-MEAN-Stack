@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.navbar{
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background-color: #172331;
+  border-color: #e7e7e7;
+  border: 0;
+  border-radius: 0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #f78f1e;
+}
+
+.mat-accordion .mat-expansion-panel{
+  background-color: transparent;
+  color: #fff
+}
+.mat-accordion .mat-expansion-panel:first-of-type{
+  background-color: transparent !important;
+  color: #fff
+}
+
+.mat-expansion-panel-header-title{
+  color: #fff
+}
+
+.mat-accordion mat-accordion .mat-expansion-panel-body{
+  padding: 0
+}
+
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary{
+  width: 100%;
+  text-align: left;
+  padding-left: 48px;
+}
+
+perfect-scrollbar > .ps{
+  padding-bottom: 136px;
+}
+
+.alert-success{
+  background-color: #46c925bd;
+  box-shadow: 10px 10px 10px 10px #8fec78bd;
+  border: 1px solid  #175f05e0
+}
+.alert-danger{
+  background-color: #c93825bd;
+  box-shadow: 10px 10px 10px 10px #ee5d4abd;
+  border: 1px solid  #5e1208d7;
+}
+.flash-message{
+  color: #fff;
+  text-shadow: 10px 10px 10px #f78f1e;
+  border-radius: 4px;
+  position: fixed;
+  top:15%;
+  right: 0;
+  min-width: 28%;
+  transition: all ease-in-out 5s;
+  z-index: 999;
+}
+.text-danger{
+  color: rgb(233, 110, 110)
+}

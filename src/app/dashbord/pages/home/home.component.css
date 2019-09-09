@@ -1,0 +1,187 @@
+.statistics{
+  /* background-color: aqua; */
+  padding: 15px
+}
+.orders,
+.users,
+.products,
+.categories
+{
+  height: 140px;
+  padding: 20px;
+  color: #fff;
+  border-radius: 5px;
+}
+.orders{
+  background-color: #f3a683;
+}
+.users{
+  background-color: #f7d794
+}
+.products{
+  background-color: #e77f67
+}
+.categories{
+  background-color: #cf6a87
+}
+
+
+.statistics .info{
+  display: inline-block;
+}
+
+.statistics .info .number{
+  font-size: 40px;
+  font-weight: 500;
+}
+.statistics .info .text{
+}
+
+.statistics .icon{
+  display:     inline-block;
+  float:       right;
+  font-size:   70px;
+  transition:  all .8s ease-in-out;
+  line-height: 0;
+  color:       #735b3d;
+
+}
+.statistics .orders:hover     .icon,
+.statistics .users:hover      .icon,
+.statistics .products:hover   .icon,
+.statistics .categories:hover .icon{
+  font-size: 75px;
+  transition: all .5s ease-in-out
+}
+
+.views{
+  background-color: #dadada;
+  margin-top: 36px
+}
+
+
+  .path a:after{
+  content: "";
+  position: absolute;
+  border-radius: 0px 50px 50px 1px;
+  color: #fff;
+  top: 0px;
+ /* left: 89px;*/
+  background: #fff;
+  width: 20px;
+  height: 20px
+}
+
+.btn-arrow-right:before,
+.btn-arrow-left:after {
+/* hide arrow tails background */
+background-color: #4d4d4d; }
+
+  .prog{
+padding: 40px 0;
+text-align: center;
+}
+  .prog #user span,
+  .prog #tags span,
+  .prog #cart span,
+  .prog #eye span,
+  .prog #comments span,
+  .prog #chart span{
+position: absolute;
+  top: 14%;
+  left: 39%;
+  font-size: 37px;
+}
+  .prog #user span{
+color: #1fbba6;
+}
+  .prog #tags span{
+color: #e74c3c
+}
+  .prog #cart span{
+color: #95a5a6
+}
+  .prog #eye span{
+color: #d35400
+}
+  .prog #comments span{
+color: #f39c12
+}
+  .prog #chart span{
+color: #16a085
+}
+  .prog p{
+  font-size: 15px;
+}
+  .prog p span{
+display: block;
+  font-size: 20px;
+  padding: 0px;
+  font-weight: 700;
+}
+  .boxs{
+text-align: center;
+}
+  .boxs .box{
+  background-color: green;
+  color: aliceblue;
+  margin: 12px 0;
+  padding: 1px 14px;
+  position: relative;
+}
+  .boxs .box .fa{
+margin: 7px;
+box-shadow: -2px 0px 24px -2px #000;
+}
+  .boxs .box p{
+color: aliceblue
+}
+ .boxs .box span{
+  position: relative;
+  left: 64px;
+  top: -32px;
+  padding: 3px;
+  border-radius: 50px;
+  font-size: 12px;
+  background-color: #dc7400;
+  box-shadow: -2px 0px 24px -3px #000;
+}
+  .boxs .box span:hover{
+font-size: 14px;
+}
+  .boxs #users{
+background-color: #7f8c8d
+}
+  .boxs #barcode{
+background-color: #c0392b
+}
+  .boxs #chart{
+background-color: #f39c12
+}
+  .boxs #calendar{
+background-color: #bdc3c7
+}
+  .boxs #archive{
+background-color: #d35400
+}
+  .boxs #tasks{
+background-color: #f1c40f
+}
+  .boxs #envelope{
+background-color: #2c3e50
+}
+  .boxs #bullhorn{
+background-color: #27ae60
+}
+  .boxs #plane{
+background-color: #16a085
+}
+  .boxs #money{
+background-color: #34495e
+}
+  .boxs #thumbs{
+background-color: #e67e22
+}
+  .boxs #support{
+background-color: #2ecc71
+}

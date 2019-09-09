@@ -1,0 +1,154 @@
+<section class="pro">
+  <div>
+    <div class="col-md-6 ">
+      <div class="pro-form">
+        <form (ngSubmit)="onSaveProduct()" [formGroup]="productFormAdd" >
+          <div class="example-container">
+
+            <mat-form-field>
+              <input
+                [ngModel]="pro?.name"
+                matInput
+                type="text"
+                formControlName="name"
+                placeholder="Product Name">
+                <mat-error *ngIf="productFormAdd.get('name').invalid"> please enter product name </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+              <input
+                [ngModel]="pro?.price"
+                matInput
+                type="number"
+                formControlName="price"
+                placeholder="Product price">
+                <mat-error *ngIf="productFormAdd.get('price').invalid"> please enter product price </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                [ngModel]="pro?.discount"
+                matInput
+                type="number"
+                formControlName="discount"
+                placeholder="Product discount">
+                <mat-error *ngIf="productFormAdd.get('discount').invalid"> please enter product discount </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                [ngModel]="pro?.quantity"
+                matInput
+                type="number"
+                formControlName="quantity"
+                placeholder="Product quantity">
+                <mat-error *ngIf="productFormAdd.get('quantity').invalid"> please enter product quantity </mat-error>
+            </mat-form-field>
+
+
+
+            <mat-form-field>
+              <mat-select
+                matInput
+                [ngModel]="pro?.category"
+                formControlName="category"
+                placeholder="categories section">
+                <!-- <div *ngIf="pro?.category">
+                  <mat-option *ngFor="let categoryy of categoriesM" value="{{ pro?.category }}">{{ categoryy.name === pro?.category ? pro?.category : categoryy.name }} </mat-option>
+                </div>
+                <div *ngIf="!pro?.category"> -->
+                  <mat-option *ngFor="let categoryy of categoriesM" value="{{ categoryy.name === pro?.category ? pro?.category : categoryy.name }}">{{ categoryy.name === pro?.category ? pro?.category : categoryy.name }} </mat-option>
+                <!-- </div> -->
+              </mat-select>
+              <mat-error *ngIf="productFormAdd.get('category').invalid"> please enter category Select creator </mat-error>
+            </mat-form-field>
+
+            <div class="img-form-field">
+              <button type="button" mat-button color="accent" (click)="imagPicker.click() " > Add Image </button>
+              <input
+                type="file"
+                #imagPicker
+                (change)="onImagePicked($event)">
+                <div class="img-review" *ngIf="imgReview !== null && imgReview" >
+                  <img src="{{ imgReview }}" [alt]="productFormAdd.value.name" />
+                </div>
+              </div>
+
+            <mat-form-field>
+              <textarea
+                matInput
+                [ngModel]="pro?.description"
+                formControlName="description"
+                rows="6"
+                ></textarea>
+                <mat-hint align="end">{{productFormAdd.get('description').value?.length || 0}}</mat-hint>
+                <mat-error *ngIf="productFormAdd.get('description').invalid"> please enter Produc Description </mat-error>
+            </mat-form-field>
+
+
+            <mat-slide-toggle
+              [(ngModel)]="showProduct"
+              [ngModelOptions]="{standalone: true}"
+              (change)="changed($event)">
+                Show Category
+            </mat-slide-toggle>
+
+
+            <div class="example-button-row">
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="productFormAdd.invalid"> {{ !editMode ? 'add' : 'Update' }}  category</button>
+            </div>
+
+           </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 cat-prev">
+
+      <!-- <h1 class="text-center" *ngIf="productsM.length <= 0">You Don't Have Any Product please add one</h1> -->
+
+      <mat-accordion *ngIf="productsM.length > 0">
+        <mat-expansion-panel *ngFor="let product of productsM; let i = index" >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ product.name  | uppercase}}
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <p> {{ product.description }} </p>
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+          <h4>display: <span [style.color]="product.showProduct  ? 'green' : 'red'">
+            <span>{{ product.showProduct ? 'Yes' : 'No'}}</span>
+            </span>
+          </h4>
+          <h4>{{ product.addedDate | date }}</h4>
+          <h5>{{ product.creatorName }}</h5>
+          <mat-action-row>
+            <button mat-button color="primary" (click)="onEdit( product.id )">   Edit</button>
+            <button mat-button color="warn"    (click)="onDeletePro( product.id , product.name )"> Delete</button>
+            <button
+              mat-button
+              color="accent"
+              [routerLink]="['/dashbord/pages/products/product', product.id, 'info']">More</button>
+
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-paginator
+      [length]="totalProducts"
+      [pageSize]="proPerPage"
+      [pageSizeOptions]="proPageSizeOptions"
+      (page)="onChangedPage($event)"></mat-paginator>
+
+    </div>  <!--End prev calss -->
+
+  </div>
+</section>
+

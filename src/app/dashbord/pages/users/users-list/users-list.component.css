@@ -1,0 +1,61 @@
+.panel-default{
+  max-width: 97%;
+  margin: auto
+}
+.panel-heading{
+  padding: 0
+}
+.panel-default th,
+.panel-default td{
+  /* background-color: aqua; */
+  /* width: 24%; */
+  text-align: left;
+  margin: auto;
+  width: 15%;
+}
+
+.panel-default .mat-raised-button{
+  /* padding: 0;
+  font-size: 5px;
+  min-width: 27px */
+}
+.panel-default  td button{
+  padding: 0px 0px !important;
+  line-height: 2;
+  margin-left: 2px;
+  font-size: 12px;
+  min-width: 53px !important;
+}
+/*
+table tr th:nth-child(1),
+table tr td:nth-child(1){
+  background-color: aqua;
+  width: 4%;
+}
+table tr th:nth-child(2),
+table tr td:nth-child(2){
+  background-color: red;
+  width: 6%;
+}
+table tr th:nth-child(3),
+table tr td:nth-child(3){
+  background-color: aqua;
+  width: 4%;
+} */
+table tr th{
+  background-color: #fff;
+}
+
+table tr th,
+table tr td{
+  width: 4%;
+}
+table tr th:first-child,
+table tr td:first-child{
+  width: 1%;
+}
+
+table tr th:last-child,
+table tr td:last-child{
+  width: 12%;
+}

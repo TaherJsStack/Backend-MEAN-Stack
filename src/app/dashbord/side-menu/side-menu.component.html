@@ -1,0 +1,142 @@
+<perfect-scrollbar>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/dashbord/pages/home">
+          <img src="assets/images/logo.png" alt="title">
+        </a>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <section class="profile" *ngIf="user" >
+    <div class="profile-img">
+      <img src="{{ user.photoURL }}" alt="admin" class="img-responsive">
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ user.name.firstname }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <h5 routerLink="/dashbord/pages/profile">Profile</h5>
+          <h5>Admins</h5>
+          <h5 (click)="onLogout()">logOut</h5>
+          <!-- <h5>logOut</h5> -->
+        </mat-expansion-panel>
+
+      </mat-accordion>
+  </section>
+
+  <br>
+  <section class="mat-accordion">
+
+    <button mat-button color="primary"  routerLinkActive="active" >
+      <a routerLink="/dashbord/pages/home"> <i class="fa fa-tachometer"></i> Dashbord </a>
+    </button>
+    <button mat-button color="primary">
+      <a routerLink="/dashbord/pages/categories/categorieslist"> <i class="fa fa fa-cubes"></i> categories </a>
+    </button>
+    <button mat-button color="primary">
+      <a routerLink="/dashbord/pages/products/productslist"> <i class="fa fa-barcode"></i> products </a>
+    </button>
+    <button mat-button color="primary">
+      <a routerLink="/dashbord/pages/users/userslist"> <i class="fa fa-users"></i> users </a>
+    </button>
+    <button mat-button color="primary">
+      <a routerLink="/dashbord/pages/orders/orderslist"> <i class="fa fa-shopping-bag "></i> Orders </a>
+    </button>
+
+    <button mat-button color="primary" *ngIf="isAuth" >
+      <a > <i class="fa fa-shopping-bag "></i> as Observable </a>
+    </button>
+
+      <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="fa fa-tachometer"></i> Dashbord
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul class="list-group" style="color: red">
+
+                <li class="list-group-item">
+                  <button mat-button color="primary">
+                    <a routerLink="/pages/home"> Home </a>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <button mat-button color="primary" disabled> Cras justo odio </button>
+                </li>
+                <li class="list-group-item">
+                  <button mat-button color="primary" disabled> Cras justo odio </button>
+                </li>
+                <li class="list-group-item">
+                  <button mat-button color="primary" disabled> Cras justo odio </button>
+                </li>
+                <li class="list-group-item">
+                  <button mat-button color="primary" disabled> Cras justo odio </button>
+                </li>
+
+              </ul>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+
+
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+
+
+
+
+        </mat-accordion>
+
+
+  </section>
+
+</perfect-scrollbar>

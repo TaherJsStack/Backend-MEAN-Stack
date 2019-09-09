@@ -1,0 +1,57 @@
+<h1 class="text-center" *ngIf="categories?.length <= 0">You Dont Have Any categories please add one</h1>
+<div class="panel panel-default" *ngIf="categories?.length > 0">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <table matSort class="table">
+      <tr>
+        <th> no</th>
+        <th> name</th>
+        <th> description </th>
+        <th> creator </th>
+        <th> display  </th>
+        <th> controls </th>
+      </tr>
+
+    <tr *ngFor="let category of categories; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ category.name }}</td>
+      <td>{{ category.description }}</td>
+      <td>{{ category.creatorName }}</td>
+      <!-- <td><span [style.color]="category.showCategory === true ? 'green' : 'red'">
+        <p> {{ category.showCategory ? 'Yes' : 'No' }}</p>
+        </span>
+      </td> -->
+
+      <td>
+        <mat-slide-toggle
+          [(ngModel)]="category.showCategory"
+          [ngModelOptions]="{standalone: true}"
+          (change)="changeCateState(category.id, $event)"
+          [style.color]="category.showCategory === true ? 'green' : 'red'">
+          <p> {{ category.showCategory ? 'Yes' : 'No' }}</p>
+        </mat-slide-toggle>
+      </td>
+
+      <td>
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['/dashbord/pages/categories/editCategory', category.id, 'edit' ]">Edit</button>
+          <button mat-raised-button color="warn" (click)="onDelete(category.id , category.name )">Delete</button>
+          <button
+            mat-raised-button
+            color="accent"
+            [routerLink]="['/dashbord/pages/categories/category', category.id, 'info' ]">details</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator
+  [length]="totalPosts"
+  [pageSize]="postsPerPage"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="onChangedPage($event)"></mat-paginator>
+
+</div>

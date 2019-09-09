@@ -1,0 +1,67 @@
+.navbar-default{
+  color: red
+}
+
+.navbar-default .navbar-nav > li > a p {
+  background-color: red;
+  width: 17px;
+  height: 19px;
+  font-size: 11px;
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  text-align: center;
+  border-radius: 16px;
+  line-height: 22px;
+}
+
+.navbar-default .navbar-nav > li > a:hover p {
+  color: #fff;
+  background-color: #f78f1e;
+}
+.envelope-not{
+  /* background-color: aqua */
+}
+
+.dropdown-menu{
+  margin: 0;
+  padding: 0
+}
+
+.dropdown-menu > li > a .note{
+  background-color: aqua;
+  width: 216px;
+}
+
+.list-group {
+  padding-left: 0;
+  margin-bottom: 0px;
+  min-width: 190px;
+}
+.list-group-item:hover {
+  background-color: rgb(219, 219, 219)
+}
+
+
+.list-group-item > .badge {
+  float: left;
+  max-width: 27px;
+  height: 27px;
+  padding: 0;
+  margin-right: 15px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.list-group-item > .badge img{
+  max-width: 27px;
+  height: 27px;
+}
+
+.breadcrumb{
+  padding: 4px 15px;
+  margin-bottom: 0px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}

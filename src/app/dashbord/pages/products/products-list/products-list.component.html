@@ -1,0 +1,71 @@
+<h1 class="text-center" *ngIf="products?.length <= 0">You Dont Have Any categories please add one</h1>
+<div class="panel panel-default" *ngIf="products?.length > 0">
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-8 ">
+        <input #query (keyup)="serchFillter(query.value)" type="text" class="form-control" placeholder="Search.....">
+    </div>
+  </div>
+<br>
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <table matSort class="table">
+      <tr>
+        <th> id</th>
+        <th> name</th>
+        <th> iamage</th>
+        <th> description </th>
+        <th> price </th>
+        <th> Discount </th>
+        <th> Finel price </th>
+        <th> category </th>
+        <th> display </th>
+        <th> controls </th>
+      </tr>
+
+    <tr *ngFor="let product of filtteredPro; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>
+        <img src="{{ product.image }}" style="width: 45px" class="img-responsive" />
+      </td>
+      <td> <p> {{ product.description }} </p> </td>
+      <td>{{ product.price | currency:'USD':true }}</td>
+      <td>{{ product.discount | currency:'USD':true  }}</td>
+      <td>{{ product.priceDisc | currency:'USD':true }}</td>
+      <td>{{ product.category }}</td>
+      <td> <span [style.color]="product.showProduct === true ? 'red' : 'green'">
+              <p>{{ product.showProduct ? 'Yes' : 'No'}}
+              <!-- <mat-slide-toggle
+                [(ngModel)]="product.showProduct"
+                [ngModelOptions]="{standalone: true}"
+                (change)="changeProState(product.id, $event)"
+                [style.color]="product.showProduct === true ? 'green' : 'red'">
+                <p> {{ product.showProduct ? 'Yes' : 'No' }}</p>
+              </mat-slide-toggle> -->
+        </span>
+      </td>
+      <td>
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['/dashbord/pages/products/editProduct', product.id, 'edit' ]">Edit</button>
+          <button mat-raised-button color="warn" (click)="onDelete(product.id , product.name)">Delete</button>
+          <button
+            mat-raised-button
+            color="accent"
+            [routerLink]="['/dashbord/pages/products/product', product.id, 'info']">details</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator
+    [length]="totalProducts"
+    [pageSize]="proPerPage"
+    [pageSizeOptions]="proPageSizeOptions"
+    (page)="onChangedPage($event)">
+  </mat-paginator>
+
+</div>

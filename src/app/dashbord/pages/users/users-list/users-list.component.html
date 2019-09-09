@@ -1,0 +1,67 @@
+<h1 class="text-center" *ngIf="users.length <= 0">You Don't Have Any users please add one</h1>
+
+<div class="panel panel-default"  *ngIf="users.length > 0">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <table matSort class="table">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>photo</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>city</th>
+        <th>country</th>
+        <th>block User</th>
+        <th>ginder</th>
+        <th>date</th>
+        <th>addedDate</th>
+        <th>Controls</th>
+      </tr>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.name.firstname }}</td>
+        <td><img src="{{ user.photoURL }}" style="max-width: 55px"></td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address.city }}</td>
+        <td>{{ user.address.country }}</td>
+        <!-- <td [style.color]="user.blockUser === true ? 'red' : 'green'"><p>{{ user.blockUser ? 'Yes' : 'No'}}</p></!-->
+        <td>
+          <mat-slide-toggle
+            [(ngModel)]="user.blockUser"
+            [ngModelOptions]="{standalone: true}"
+            (change)="onBlockUser(user.id, user.name.firstname, $event)"
+            [style.color]="user.blockUser === true ? 'red' : 'green'">
+            <p> {{ user.blockUser ? 'Yes' : 'No' }}</p>
+          </mat-slide-toggle>
+        </td>
+        <td>{{ user.ginder }}</td>
+        <td>{{ user.date | date}}</td>
+        <td>{{ user.date |date }}</td>
+        <td>
+          <div class="example-button-row">
+            <button mat-raised-button
+                    color="primary"
+                    [routerLink]="['/dashbord/pages/users/edituser', user.id, 'edit' ]">Edit</button>
+            <button mat-raised-button
+                    color="warn"
+                    (click)="onDeleteUser( user.id, user.name.firstname)">Delete</button>
+            <button mat-raised-button
+                    color="accent"
+                    [routerLink]="['/dashbord/pages/users/user', user.id, 'info' ]">details</button>
+          </div>
+        </td>
+      </tr>
+
+  </table>
+
+  <mat-paginator
+  [length]="totalUsers"
+  [pageSize]="usersPerPage"
+  [pageSizeOptions]="usersPageSizeOptions"
+  (page)="onChangedPage($event)"></mat-paginator>
+
+  </div>
+
+</div>

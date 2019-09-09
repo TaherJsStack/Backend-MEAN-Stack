@@ -1,0 +1,45 @@
+
+.navbar-brand{
+  padding-top: 0
+}
+.navbar-brand img{
+  width: 95px;
+  margin-left: 75px;
+  padding: 8px;
+}
+
+
+.profile{
+  background-color: #415a69;
+  margin: auto;
+  width: 166px;
+  margin-top: 23px;
+}
+.profile .profile-img{
+  margin: auto;
+  width: 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+a{
+  color: #fff;
+  text-decoration: none
+}
+.mat-accordion a{
+  color: #fff
+}
+
+.list-group-item{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 0
+}
+
+.fa{
+  margin-right: 11px;
+  line-height: 1.5;
+}
+

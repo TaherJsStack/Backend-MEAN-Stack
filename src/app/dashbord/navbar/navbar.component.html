@@ -1,0 +1,69 @@
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active" routerLink="/authProfile"><a >Profile <span class="sr-only">(current)</span></a></li>
+        <li><a >Link</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><button mat-raised-button color="warn" (click)="onLogout()" style="margin-top: 7px">LogOut</button></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope"> <p class="envelope-not">3</p> </i></a>
+          <ul class="dropdown-menu">
+            <ul class="list-group">
+              <li class="list-group-item">
+                Cras justo odio
+                <span class="badge"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/1e/19/37/1e1937af-e9b6-adf5-12c5-9719ee98902f/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></span>
+              </li>
+              <li class="list-group-item">
+                Cras justo odio
+                <span class="badge"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/1e/19/37/1e1937af-e9b6-adf5-12c5-9719ee98902f/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></span>
+              </li>
+              <li class="list-group-item">
+                Cras justo odio
+                <span class="badge"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/1e/19/37/1e1937af-e9b6-adf5-12c5-9719ee98902f/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></span>
+              </li>
+              </ul>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"> <p class="envelope-not">1</p> </i></a>
+          <ul class="dropdown-menu">
+            <ul class="list-group">
+
+              <li class="list-group-item">
+                  Cras justo odio
+                  <span class="badge"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/1e/19/37/1e1937af-e9b6-adf5-12c5-9719ee98902f/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-6.png/246x0w.jpg"></span>
+              </li>
+
+              </ul>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shoapping-cart"> </i></a>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div>
+  <ol class="breadcrumb">
+    <li><a >{{ href  }}</a></li>
+  </ol>
+</div>

@@ -1,0 +1,37 @@
+<h1 class="text-center">Orders</h1>
+<h1 class="text-center" *ngIf="orders?.length <= 0">You Dont Have Any Orders </h1>
+<div class="panel panel-default" *ngIf="orders?.length > 0">
+
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <table matSort class="table">
+      <tr>
+        <th> no</th>
+        <th> creator</th>
+        <th> products</th>
+        <th> addedDate </th>
+        <th> total Peice </th>
+        <th> Satae </th>
+        <th> action </th>
+      </tr>
+    <tr *ngFor="let order of orders; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ order.creatorName }}</td>
+      <td>{{ order.products?.length }}</td>
+      <td>{{ order.addedDate | date }}</td>
+      <td>{{ order.totalPrice | currency:'USD':true }}</td>
+      <td>
+        <button mat-raised-button color="warn"    *ngIf="!order.active" (click)="onOrderState(order._id, order.products)">{{ order.active ? ' ' : 'waiting' }} !</button>
+        <button mat-raised-button color="primary" *ngIf="order.active"> {{ order.active ? 'accepted': ' ' }} </button>
+      </td>
+      <td>
+        <div class="example-button-row">
+          <button mat-raised-button color="warn" (click)="onDeleteOrder(order._id)">Delete</button>
+          <button
+            mat-raised-button
+            [routerLink]="['/dashbord/pages/orders/order/', order._id, 'info']">details</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,96 @@
+<section class="cat">
+  <div>
+    <div class="col-md-6 ">
+      <div class="cat-form">
+        <form (ngSubmit)="onSaveCategory(category)" #category="ngForm">
+          <div class="example-container">
+
+            <mat-form-field>
+              <input
+                [ngModel]="cate?.name"
+                matInput
+                required
+                name="catname"
+                #catname='ngModel'
+                placeholder="Category Name">
+                <mat-error *ngIf="catname.invalid"> please enter category name </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <textarea
+                matInput
+                [ngModel]="cate?.description"
+                required
+                name="catdesc"
+                rows="6"
+                #catdesk='ngModel'
+                placeholder="Category Description"></textarea>
+                <mat-hint align="end">{{catdesk.value?.length || 0}}</mat-hint>
+                <mat-error *ngIf="catdesk.invalid"> please enter category Description </mat-error>
+            </mat-form-field>
+
+            <mat-slide-toggle
+              [(ngModel)]="showCategory"
+              [ngModelOptions]="{standalone: true}"
+              (change)="changed($event)">
+                Show Category
+            </mat-slide-toggle>
+
+            <br />
+            <div class="example-button-row">
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="category.invalid"> {{ !editMode ? 'add' : 'Update' }}  category</button>
+            </div>
+           </div>
+        </form>
+
+      </div>
+    </div>
+
+
+    <div class="col-md-6 cat-prev">
+
+      <h1 class="text-center" *ngIf="categories.length <= 0">You Don't Have Any categories please add one</h1>
+
+      <mat-accordion *ngIf="categories.length > 0">
+        <mat-expansion-panel *ngFor="let category of categories; let i = index" >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ category.name  | uppercase}}
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+            <h5> creator:{{ category.creatorName }}</h5>
+            <h3> display: <span [style.color]="category.showCategory === true ? 'green' : 'red'">
+              <span>{{ category.showCategory ? 'Yes' : 'No'}}</span>
+              </span>
+            </h3>
+            <p>  description{{ category.description }} </p>
+            <h4> added date:{{ category.addedDate | date }} </h4>
+          <mat-action-row>
+            <button mat-button color="primary" (click)="onEditCate( category.id )">   Edit</button>
+            <button mat-button color="warn"    (click)="onDeleteCate( category.id, category.name )"> Delete</button>
+            <button
+              mat-button
+              color="accent"
+              [routerLink]="['/dashbord/pages/categories/category', category.id, 'info' ]">More</button>
+
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-paginator
+      [length]="totalPosts"
+      [pageSize]="postsPerPage"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onChangedPage($event)"></mat-paginator>
+
+    </div> <!-- End prev calss -->
+
+
+
+  </div>
+</section>

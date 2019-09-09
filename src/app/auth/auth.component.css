@@ -1,0 +1,56 @@
+.background{
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/images/login/login.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -11;
+}
+.background::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #00000063;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.background .background-img{
+  transform: rotate(44deg);
+  position: absolute;
+  top: -50%;
+  left: -150px;
+  overflow: hidden;
+}
+.background .background-img img{
+  transform: rotate(-44deg);
+}
+
+.container{
+  padding-top: 100px
+}
+
+.example-button-row{
+  width: 178px;
+  margin: auto;
+  margin-top: 30px;
+  z-index: 999;
+}
+.example-button-row button{
+  margin-right: 5px;
+}
+
+
+router-outlet{
+  margin-top: 150px
+}

@@ -1,0 +1,50 @@
+<section class="auth">
+  <div class="auth-form">
+    <h4 class="text-center">SignIn</h4>
+    <!-- <p >{{ errMsg }}</p> -->
+    <div class='logo-img'>
+      <img src="assets/images/login-logo.png" alt="logo">
+    </div>
+    <mat-error class="alert">{{ errMsg }}</mat-error>
+
+    <form (ngSubmit)="onSignin(auth)" #auth="ngForm">
+      <div class="example-container">
+        <mat-form-field>
+          <input
+            ngModel
+            matInput
+            required
+            email
+            #email="ngModel"
+            type="email"
+            name="authEmail"
+            placeholder="auth Email => t@ee.com">
+            <mat-error *ngIf="email">Default Testing Admin E-mail => t@ee.com</mat-error>
+            <!-- <mat-error  *ngIf="errMsg == 'this email do not exsist ::: DB'" >{{ errMsg }}</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            ngModel
+            matInput
+            required
+            #password="ngModel"
+            type="password"
+            name="authPassword"
+            placeholder="auth Password => 123456">
+            <mat-error *ngIf="password.invalid">Default Testing Admin Password => 123456</mat-error>
+        </mat-form-field>
+
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="auth.invalid">Login</button>
+        </div>
+        </div>
+    </form>
+
+  </div>
+
+</section>
